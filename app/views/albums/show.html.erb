@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @albums.name %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%=h @albums.artist_id %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%=h @albums.speed_id %>
+</p>
+
+<p>
+  <b>Multiple units:</b>
+  <%=h @albums.multiple_units %>
+</p>
+
+<p>
+  <b>Catalog number:</b>
+  <%=h @albums.catalog_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_albums_path(@albums) %> |
+<%= link_to 'Back', albums_path %>

@@ -1,0 +1,28 @@
+<h1>Listing records</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Artist</th>
+    <th>Speed</th>
+    <th>Multiple units</th>
+    <th>Catalog number</th>
+  </tr>
+
+<% @records.each do |record| %>
+  <tr>
+    <td><%=h record.name %></td>
+    <td><%=h record.artist_id %></td>
+    <td><%=h record.speed_id %></td>
+    <td><%=h record.multiple_units %></td>
+    <td><%=h record.catalog_number %></td>
+    <td><%= link_to 'Show', record %></td>
+    <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    <td><%= link_to 'Destroy', record, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New record', new_record_path %>

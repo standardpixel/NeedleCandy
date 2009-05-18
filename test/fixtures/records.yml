@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  artist_id: 1
+  speed_id: 1
+  multiple_units: false
+  catalog_number: MyString
+
+two:
+  name: MyString
+  artist_id: 1
+  speed_id: 1
+  multiple_units: false
+  catalog_number: MyString

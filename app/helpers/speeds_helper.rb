@@ -1,0 +1,2 @@
+module SpeedsHelper
+end

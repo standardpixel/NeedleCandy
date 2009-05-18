@@ -1,0 +1,32 @@
+<h1>Editing albums</h1>
+
+<% form_for(@albums) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :artist_id %><br />
+    <%= f.text_field :artist_id %>
+  </p>
+  <p>
+    <%= f.label :speed_id %><br />
+    <%= f.text_field :speed_id %>
+  </p>
+  <p>
+    <%= f.label :multiple_units %><br />
+    <%= f.check_box :multiple_units %>
+  </p>
+  <p>
+    <%= f.label :catalog_number %><br />
+    <%= f.text_field :catalog_number %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @albums %> |
+<%= link_to 'Back', albums_path %>

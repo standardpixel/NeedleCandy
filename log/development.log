@@ -1,0 +1,900 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "speeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090518045537')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing ApplicationController#index (for ::1 at 2009-05-17 22:03:45) [GET]
+
+ActionController::RoutingError (No route matches "/speed" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SpeedsController#index (for ::1 at 2009-05-17 22:04:04) [GET]
+  [4;36;1mSpeed Load (0.5ms)[0m   [0;1mSELECT * FROM "speeds" [0m
+Rendering template within layouts/speeds
+Rendering speeds/index
+Completed in 112ms (View: 107, DB: 1) | 200 OK [http://localhost/speeds]
+
+
+Processing SpeedsController#new (for ::1 at 2009-05-17 22:04:07) [GET]
+Rendering template within layouts/speeds
+Rendering speeds/new
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/speeds/new]
+
+
+Processing SpeedsController#create (for ::1 at 2009-05-17 22:04:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/RHkGrmcRVWECQig5JbPhCbGtX/pKVRPymBigQwm2e8=", "speed"=>{"name"=>"33"}}
+  [4;35;1mSpeed Create (25.2ms)[0m   [0mINSERT INTO "speeds" ("name", "created_at", "updated_at") VALUES('33', '2009-05-18 05:04:14', '2009-05-18 05:04:14')[0m
+Redirected to http://localhost:3000/speeds/1
+Completed in 80ms (DB: 25) | 302 Found [http://localhost/speeds]
+
+
+Processing SpeedsController#show (for ::1 at 2009-05-17 22:04:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSpeed Load (0.2ms)[0m   [0;1mSELECT * FROM "speeds" WHERE ("speeds"."id" = 1) [0m
+Rendering template within layouts/speeds
+Rendering speeds/show
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/speeds/1]
+
+
+Processing SpeedsController#index (for ::1 at 2009-05-17 22:04:18) [GET]
+  [4;35;1mSpeed Load (0.7ms)[0m   [0mSELECT * FROM "speeds" [0m
+Rendering template within layouts/speeds
+Rendering speeds/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/speeds]
+
+
+Processing SpeedsController#new (for ::1 at 2009-05-17 22:04:19) [GET]
+Rendering template within layouts/speeds
+Rendering speeds/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/speeds/new]
+
+
+Processing SpeedsController#create (for ::1 at 2009-05-17 22:04:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/RHkGrmcRVWECQig5JbPhCbGtX/pKVRPymBigQwm2e8=", "speed"=>{"name"=>"45"}}
+  [4;36;1mSpeed Create (0.4ms)[0m   [0;1mINSERT INTO "speeds" ("name", "created_at", "updated_at") VALUES('45', '2009-05-18 05:04:23', '2009-05-18 05:04:23')[0m
+Redirected to http://localhost:3000/speeds/2
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/speeds]
+
+
+Processing SpeedsController#show (for ::1 at 2009-05-17 22:04:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSpeed Load (0.2ms)[0m   [0mSELECT * FROM "speeds" WHERE ("speeds"."id" = 2) [0m
+Rendering template within layouts/speeds
+Rendering speeds/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/speeds/2]
+
+
+Processing SpeedsController#index (for ::1 at 2009-05-17 22:04:25) [GET]
+  [4;36;1mSpeed Load (0.5ms)[0m   [0;1mSELECT * FROM "speeds" [0m
+Rendering template within layouts/speeds
+Rendering speeds/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/speeds]
+
+
+Processing SpeedsController#index (for ::1 at 2009-05-17 22:15:32) [GET]
+  [4;35;1mSpeed Load (0.5ms)[0m   [0mSELECT * FROM "speeds" [0m
+Rendering template within layouts/speeds
+Rendering speeds/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/speeds]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "artists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090518051748')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("artists")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("speeds")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "artist_id" integer, "speed_id" integer, "multiple_units" boolean, "catalog_number" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090518052344')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("artists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("records")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("speeds")[0m
+
+
+Processing RecordsController#index (for ::1 at 2009-05-17 22:24:40) [GET]
+
+NameError (uninitialized constant RecordsController::Records):
+  app/controllers/records_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "albums" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "artist_id" integer, "speed_id" integer, "multiple_units" boolean, "catalog_number" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090518052907')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing AlbumsController#index (for ::1 at 2009-05-17 22:29:41) [GET]
+
+NameError (uninitialized constant AlbumsController::Albums):
+  app/controllers/albums_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.5ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing AlbumsController#index (for ::1 at 2009-05-17 22:34:09) [GET]
+
+NameError (uninitialized constant AlbumsController::Albums):
+  app/controllers/albums_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:35:13) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeedsController#index (for ::1 at 2009-05-17 22:35:22) [GET]
+  [4;36;1mSpeed Load (0.8ms)[0m   [0;1mSELECT * FROM "speeds" [0m
+Rendering template within layouts/speeds
+Rendering speeds/index
+Completed in 29ms (View: 23, DB: 1) | 200 OK [http://localhost/speeds]
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:35:31) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#show (for ::1 at 2009-05-17 22:35:57) [GET]
+  Parameters: {"id"=>"indes"}
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:16:in `show'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#show (for ::1 at 2009-05-17 22:36:00) [GET]
+  Parameters: {"id"=>"index"}
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:16:in `show'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#new (for ::1 at 2009-05-17 22:36:05) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:27:in `new'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (162.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:36:08) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:36:12) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:36:16) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (104.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:36:20) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:38:13) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:38:15) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (103.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:38:23) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:41:41) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:41:43) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:41:52) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:41:53) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:45:45) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 22:56:53) [GET]
+
+NameError (uninitialized constant ArtistsController::Artists):
+  app/controllers/artists_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 23:02:43) [GET]
+  [4;36;1mArtist Load (1.4ms)[0m   [0;1mSELECT * FROM "artists" [0m
+Rendering template within layouts/artists
+Rendering artists/index
+
+ActionView::TemplateError (undefined local variable or method `new_artists_path' for #<ActionView::Base:0x1ac1484>) on line #20 of app/views/artists/index.html.erb:
+17: 
+18: <br />
+19: 
+20: <%= link_to 'New artists', new_artists_path %>
+
+    app/views/artists/index.html.erb:20
+    app/controllers/artists_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.5ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for ::1 at 2009-05-17 23:03:03) [GET]
+
+ActionController::RoutingError (No route matches "/artist" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 23:03:10) [GET]
+  [4;35;1mArtist Load (0.4ms)[0m   [0mSELECT * FROM "artists" [0m
+Rendering template within layouts/artists
+Rendering artists/index
+
+ActionView::TemplateError (undefined local variable or method `new_artists_path' for #<ActionView::Base:0x26cd750>) on line #20 of app/views/artists/index.html.erb:
+17: 
+18: <br />
+19: 
+20: <%= link_to 'New artists', new_artists_path %>
+
+    app/views/artists/index.html.erb:20
+    app/controllers/artists_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 23:05:25) [GET]
+  [4;36;1mArtist Load (0.6ms)[0m   [0;1mSELECT * FROM "artists" [0m
+Rendering template within layouts/artists
+Rendering artists/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/artists]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSpeeds (20090518045537)
+Migrating to CreateArtists (20090518051748)
+Migrating to CreateRecords (20090518052344)
+Migrating to CreateAlbums (20090518052907)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("artists")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("speeds")[0m
+
+
+Processing RecordsController#index (for ::1 at 2009-05-17 23:06:35) [GET]
+  [4;36;1mRecord Load (0.6ms)[0m   [0;1mSELECT * FROM "records" [0m
+Rendering template within layouts/records
+Rendering records/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/records]
+
+
+Processing ArtistsController#index (for ::1 at 2009-05-17 23:06:41) [GET]
+  [4;35;1mArtist Load (0.4ms)[0m   [0mSELECT * FROM "artists" [0m
+Rendering template within layouts/artists
+Rendering artists/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/artists]
+
+
+Processing ArtistsController#new (for ::1 at 2009-05-17 23:06:43) [GET]
+Rendering template within layouts/artists
+Rendering artists/new
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/artists/new]
+
+
+Processing ArtistsController#create (for ::1 at 2009-05-17 23:06:50) [POST]
+  Parameters: {"artist"=>{"name"=>"Yes"}, "commit"=>"Create", "authenticity_token"=>"/RHkGrmcRVWECQig5JbPhCbGtX/pKVRPymBigQwm2e8="}
+  [4;36;1mArtist Create (0.6ms)[0m   [0;1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES('Yes', '2009-05-18 06:06:50', '2009-05-18 06:06:50')[0m
+Redirected to http://localhost:3000/artists/1
+Completed in 64ms (DB: 1) | 302 Found [http://localhost/artists]
+
+
+Processing ArtistsController#show (for ::1 at 2009-05-17 23:06:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mArtist Load (0.2ms)[0m   [0mSELECT * FROM "artists" WHERE ("artists"."id" = 1) [0m
+Rendering template within layouts/artists
+Rendering artists/show
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/artists/1]
+
+
+Processing RecordsController#index (for ::1 at 2009-05-17 23:06:58) [GET]
+  [4;36;1mRecord Load (0.5ms)[0m   [0;1mSELECT * FROM "records" [0m
+Rendering template within layouts/records
+Rendering records/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/records]
+
+
+Processing RecordsController#new (for ::1 at 2009-05-17 23:06:59) [GET]
+Rendering template within layouts/records
+Rendering records/new
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/records/new]
+
+
+Processing RecordsController#create (for ::1 at 2009-05-17 23:08:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/RHkGrmcRVWECQig5JbPhCbGtX/pKVRPymBigQwm2e8=", "record"=>{"multiple_units"=>"0", "name"=>"Fragile", "speed_id"=>"0", "catalog_number"=>"SD19132", "artist_id"=>"0"}}
+  [4;35;1mRecord Create (0.4ms)[0m   [0mINSERT INTO "records" ("name", "multiple_units", "speed_id", "created_at", "updated_at", "catalog_number", "artist_id") VALUES('Fragile', 'f', 0, '2009-05-18 06:08:08', '2009-05-18 06:08:08', 'SD19132', 0)[0m
+Redirected to http://localhost:3000/records/1
+Completed in 93ms (DB: 0) | 302 Found [http://localhost/records]
+
+
+Processing RecordsController#show (for ::1 at 2009-05-17 23:08:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecord Load (0.2ms)[0m   [0;1mSELECT * FROM "records" WHERE ("records"."id" = 1) [0m
+Rendering template within layouts/records
+Rendering records/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/records/1]
+
+
+Processing RecordsController#index (for ::1 at 2009-05-17 23:08:16) [GET]
+  [4;35;1mRecord Load (0.6ms)[0m   [0mSELECT * FROM "records" [0m
+Rendering template within layouts/records
+Rendering records/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/records/]

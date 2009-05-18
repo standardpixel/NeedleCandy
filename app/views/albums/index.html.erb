@@ -1,0 +1,28 @@
+<h1>Listing albums</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Artist</th>
+    <th>Speed</th>
+    <th>Multiple units</th>
+    <th>Catalog number</th>
+  </tr>
+
+<% @albums.each do |albums| %>
+  <tr>
+    <td><%=h albums.name %></td>
+    <td><%=h albums.artist_id %></td>
+    <td><%=h albums.speed_id %></td>
+    <td><%=h albums.multiple_units %></td>
+    <td><%=h albums.catalog_number %></td>
+    <td><%= link_to 'Show', albums %></td>
+    <td><%= link_to 'Edit', edit_albums_path(albums) %></td>
+    <td><%= link_to 'Destroy', albums, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New albums', new_albums_path %>
