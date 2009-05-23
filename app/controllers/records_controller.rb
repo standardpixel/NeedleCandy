@@ -40,7 +40,11 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.xml
   def create
-    @record = Record.new(params[:record])
+    @params = params[:record]
+    
+    @artist = Artist.find_or_create_by_name('Beatles')
+    
+    @record = Record.new( :name => @params[ :name ], :artist_id => @artist.id, :speed_id => @params[ :speed_id ], :multiple_units => @params[ :multiple_units ], :catalog_number => @params[ :catalog_number ] )
 
     respond_to do |format|
       if @record.save

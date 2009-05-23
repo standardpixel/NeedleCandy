@@ -1,31 +1,60 @@
 <h1>New record</h1>
 
 <% form_for(@record) do |f| %>
-  <%= f.error_messages %>
+		<%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :artist_id %><br />
-    <%= f.text_field :artist_id %>
-  </p>
-  <p>
-    <%= f.label :speed_id %><br />
-    <%= f.text_field :speed_id %>
-  </p>
-  <p>
-    <%= f.label :multiple_units %><br />
-    <%= f.check_box :multiple_units %>
-  </p>
-  <p>
-    <%= f.label :catalog_number %><br />
-    <%= f.text_field :catalog_number %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<p>
+	<%= f.label :name %><br />
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :artist_id %><br />
+	<div id="myAutoComplete">
+		<%= f.text_field :artist_id %>
+		<div id="myContainer"></div>
+	</div>
+
+</p>
+<p>
+	<%= f.label :speed_id %><br />
+	<%= collection_select(:speed, :speed_id, Speed.all, :id, :name) %>
+
+</p>
+<p>
+	<%= f.label :multiple_units %><br />
+	<%= f.check_box :multiple_units %>
+</p>
+<p>
+	<%= f.label :catalog_number %><br />
+	<%= f.text_field :catalog_number %>
+</p>
+<p>
+	<%= f.submit 'Create' %>
+</p>
 <% end %>
 
 <%= link_to 'Back', records_path %>
+
+<script type="text/javascript">
+ YAHOO.example.BasicRemote = function() {
+    // Use an XHRDataSource
+    var oDS = new YAHOO.util.XHRDataSource("/artists.xml");
+    // Set the responseType
+    oDS.responseType = YAHOO.util.DataSource.TYPE_XML;
+    // Define the schema of the delimited results
+	oDS.responseSchema = {
+	            resultNode: "artist",
+	            fields: ['name','id']
+	};
+    // Enable caching
+    oDS.maxCacheEntries = 5;
+
+    // Instantiate the AutoComplete
+    var oAC = new YAHOO.widget.AutoComplete("record_artist_id", "myContainer", oDS);
+
+    return {
+        oDS: oDS,
+        oAC: oAC
+    };
+}();
+</script>

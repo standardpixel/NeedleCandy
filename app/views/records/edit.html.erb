@@ -13,7 +13,8 @@
   </p>
   <p>
     <%= f.label :speed_id %><br />
-    <%= f.text_field :speed_id %>
+		<%= @record.speed_id %>
+    <%= collection_select(:speed, :speed_id, Speed.all, :id, :name, { :selected => @record.speed_id }  ) %>
   </p>
   <p>
     <%= f.label :multiple_units %><br />
